@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Atishay Enterprises – Two-Wheeler Battery Manufacturer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet"/>
+
+<!-- ============================================================
+     ATISHAY ENTERPRISES – WEBSITE SOURCE CODE
+     ============================================================
+     HOW TO EDIT:
+     - To change colors: edit the :root CSS variables at the top
+     - To change product info: find the <!-- PRODUCT CARDS --> section
+     - To change hero slider images: find <!-- HERO SLIDER ITEMS -->
+     - To change contact details: find <!-- CONTACT INFO -->
+     - To add real product images: replace <img src="..." /> tags
+     ============================================================ -->
+
+<style>
+/* ============================================================
+   DESIGN TOKENS — change these to restyle the whole site
+   ============================================================ */
+:root {
+  --bg:         #0d0f14;   /* main page background */
+  --bg2:        #13161e;   /* card / section background */
+  --bg3:        #1a1e2a;   /* input / inner card background */
+  --border:     #ffffff12; /* subtle border color */
+  --text:       #f0f2f7;   /* primary text */
+  --muted:      #8892a4;   /* secondary / muted text */
+  --accent:     #f59e0b;   /* amber — main brand accent */
+
+  /* Battery variant colors */
+  --green:      #22c55e;
+  --blue:       #3b82f6;
+  --red:        #ef4444;
+  --grey:       #94a3b8;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13, 15, 20, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.logo span { color: var(--accent); }
+
+/* To add a logo image, replace the .logo div content with:
+   <img src="your-logo.png" alt="Atishay Enterprises" style="height:40px"/> */
+
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.nav-cta:hover { opacity: .85; }
+
+/* ============================================================
+   HERO SLIDER
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Slider track */
+.slider {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  transition: transform 0.8s cubic-bezier(0.77,0,0.18,1);
+}
+.slide {
+  min-width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Individual slide backgrounds — change these hex values to change slide bg */
+.slide-green { background: radial-gradient(ellipse 80% 70% at 60% 50%, rgba(34,197,94,0.13) 0%, #0d0f14 70%); }
+.slide-blue  { background: radial-gradient(ellipse 80% 70% at 60% 50%, rgba(59,130,246,0.13) 0%, #0d0f14 70%); }
+.slide-red   { background: radial-gradient(ellipse 80% 70% at 60% 50%, rgba(239,68,68,0.13)  0%, #0d0f14 70%); }
+.slide-grey  { background: radial-gradient(ellipse 80% 70% at 60% 50%, rgba(148,163,184,0.13) 0%, #0d0f14 70%); }
+
+.slide-inner {
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+  padding: 5rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* Slide text */
+.slide-text { z-index: 1; }
+.slide-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+  border: 1px solid;
+}
+.badge-green { background: rgba(34,197,94,.1);  border-color: rgba(34,197,94,.3);  color: var(--green); }
+.badge-blue  { background: rgba(59,130,246,.1); border-color: rgba(59,130,246,.3); color: var(--blue);  }
+.badge-red   { background: rgba(239,68,68,.1);  border-color: rgba(239,68,68,.3);  color: var(--red);   }
+.badge-grey  { background: rgba(148,163,184,.1);border-color: rgba(148,163,184,.3);color: var(--grey);  }
+
+.slide-text h1 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+.slide-text p {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 420px;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+.slide-specs-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.spec-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.spec-chip .label { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+.spec-chip .value { font-size: 18px; font-weight: 700; }
+.chip-green .value { color: var(--green); }
+.chip-blue  .value { color: var(--blue);  }
+.chip-red   .value { color: var(--red);   }
+.chip-grey  .value { color: var(--grey);  }
+
+.slide-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  padding: 13px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity .2s;
+  display: inline-block;
+}
+.btn-primary:hover { opacity: .85; }
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 13px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all .2s;
+  display: inline-block;
+}
+.btn-outline:hover { border-color: rgba(255,255,255,.35); background: rgba(255,255,255,.04); }
+
+/* Battery image area */
+.slide-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.battery-img-wrap {
+  width: 320px;
+  height: 360px;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+/* -------------------------------------------------------
+   REPLACE BATTERY IMAGES:
+   - Delete the .battery-placeholder div inside each slide
+   - Add: <img src="your-image.jpg" alt="Battery name" style="width:100%;height:100%;object-fit:cover"/>
+   ------------------------------------------------------- */
+.battery-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-family: 'Rajdhani', sans-serif;
+}
+.battery-icon-large {
+  width: 140px;
+  height: 200px;
+  border-radius: 12px;
+  border: 3px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 8px;
+}
+.battery-icon-large::before {
+  content: '';
+  position: absolute;
+  top: -14px;
+  width: 40px;
+  height: 12px;
+  border-radius: 4px 4px 0 0;
+  border: 3px solid;
+  border-bottom: none;
+  border-color: inherit;
+}
+.battery-fill {
+  width: 80px;
+  border-radius: 4px;
+}
+.battery-label-text {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.battery-model-text {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+.batt-green .battery-icon-large { border-color: var(--green); background: rgba(34,197,94,.06); }
+.batt-green .battery-fill       { background: var(--green); height: 120px; }
+.batt-green .battery-label-text { color: var(--green); }
+.batt-green .battery-model-text { color: rgba(34,197,94,.6); }
+.batt-blue  .battery-icon-large { border-color: var(--blue);  background: rgba(59,130,246,.06); }
+.batt-blue  .battery-fill       { background: var(--blue); height: 100px; }
+.batt-blue  .battery-label-text { color: var(--blue); }
+.batt-blue  .battery-model-text { color: rgba(59,130,246,.6); }
+.batt-red   .battery-icon-large { border-color: var(--red);   background: rgba(239,68,68,.06); }
+.batt-red   .battery-fill       { background: var(--red); height: 140px; }
+.batt-red   .battery-label-text { color: var(--red); }
+.batt-red   .battery-model-text { color: rgba(239,68,68,.6); }
+.batt-grey  .battery-icon-large { border-color: var(--grey);  background: rgba(148,163,184,.06); }
+.batt-grey  .battery-fill       { background: var(--grey); height: 90px; }
+.batt-grey  .battery-label-text { color: var(--grey); }
+.batt-grey  .battery-model-text { color: rgba(148,163,184,.6); }
+
+/* Slider controls */
+.slider-controls {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 10;
+}
+.slider-dots {
+  display: flex;
+  gap: 8px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--muted);
+  cursor: pointer;
+  transition: all .3s;
+  border: none;
+}
+.dot.active {
+  width: 24px;
+  border-radius: 4px;
+  background: var(--accent);
+}
+.slider-arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.05);
+  color: var(--text);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s;
+}
+.slider-arrow:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.3); }
+
+/* Slide counter */
+.slide-counter {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  z-index: 10;
+}
+
+/* ============================================================
+   STATS BAR
+   ============================================================ */
+.stats {
+  padding: 3rem 2rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.stats-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+.stat-num {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.stat-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+/* ============================================================
+   SHARED SECTION STYLES
+   ============================================================ */
+section { padding: 5rem 2rem; }
+.container { max-width: 1100px; margin: auto; }
+.section-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .75rem;
+}
+.section-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+.section-sub {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   PRODUCT CARDS
+   ============================================================ */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.prod-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all .25s;
+}
+.prod-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,.18); }
+
+/* Product image area — 200px tall */
+.prod-img {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+/* -------------------------------------------------------
+   TO ADD REAL PRODUCT IMAGES:
+   Delete the inner .prod-img-placeholder div and instead add:
+   <img src="green-battery.jpg" alt="Green Series Battery"
+        style="width:100%;height:100%;object-fit:cover"/>
+   ------------------------------------------------------- */
+.prod-img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mini-battery {
+  width: 72px;
+  height: 110px;
+  border-radius: 8px;
+  border: 2.5px solid;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 8px;
+}
+.mini-battery::before {
+  content: '';
+  position: absolute;
+  top: -9px;
+  width: 24px;
+  height: 8px;
+  border-radius: 3px 3px 0 0;
+  border: 2.5px solid;
+  border-bottom: none;
+  border-color: inherit;
+}
+.mini-battery-fill { width: 44px; border-radius: 3px; }
+
+.prod-img.prod-green { background: rgba(34,197,94,.06); }
+.prod-img.prod-blue  { background: rgba(59,130,246,.06); }
+.prod-img.prod-red   { background: rgba(239,68,68,.06); }
+.prod-img.prod-grey  { background: rgba(148,163,184,.06); }
+.prod-img.prod-green .mini-battery { border-color: var(--green); }
+.prod-img.prod-blue  .mini-battery { border-color: var(--blue); }
+.prod-img.prod-red   .mini-battery { border-color: var(--red); }
+.prod-img.prod-grey  .mini-battery { border-color: var(--grey); }
+.prod-img.prod-green .mini-battery-fill { background: var(--green); height: 60px; }
+.prod-img.prod-blue  .mini-battery-fill { background: var(--blue);  height: 50px; }
+.prod-img.prod-red   .mini-battery-fill { background: var(--red);   height: 70px; }
+.prod-img.prod-grey  .mini-battery-fill { background: var(--grey);  height: 44px; }
+
+/* Color stripe at top of each card */
+.prod-stripe { height: 3px; width: 100%; }
+.stripe-green { background: var(--green); }
+.stripe-blue  { background: var(--blue); }
+.stripe-red   { background: var(--red); }
+.stripe-grey  { background: var(--grey); }
+
+.prod-body { padding: 1.5rem; }
+.prod-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-bottom: .75rem;
+  text-transform: uppercase;
+}
+.badge-green-sm { background: rgba(34,197,94,.12);   color: var(--green); }
+.badge-blue-sm  { background: rgba(59,130,246,.12);  color: var(--blue);  }
+.badge-red-sm   { background: rgba(239,68,68,.12);   color: var(--red);   }
+.badge-grey-sm  { background: rgba(148,163,184,.12); color: var(--grey);  }
+
+.prod-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: .25rem;
+}
+.prod-model { font-size: 12px; color: var(--muted); margin-bottom: 1rem; }
+.prod-specs { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-bottom: 1.25rem; }
+.prod-specs li {
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.spec-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+.dot-green { background: var(--green); }
+.dot-blue  { background: var(--blue); }
+.dot-red   { background: var(--red); }
+.dot-grey  { background: var(--grey); }
+.spec-val  { color: var(--text); font-weight: 500; }
+.prod-link {
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap .2s;
+}
+.link-green { color: var(--green); }
+.link-blue  { color: var(--blue); }
+.link-red   { color: var(--red); }
+.link-grey  { color: var(--grey); }
+.prod-link:hover { gap: 10px; }
+
+/* ============================================================
+   WHY US
+   ============================================================ */
+.why { background: var(--bg2); }
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.why-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+.why-icon { font-size: 28px; margin-bottom: 1rem; }
+.why-card h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+.why-card p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+/* ============================================================
+   COMPATIBILITY
+   ============================================================ */
+.compat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+.compat-item {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+  transition: border-color .2s;
+}
+.compat-item:hover { border-color: rgba(255,255,255,.25); }
+.compat-item .icon { font-size: 32px; margin-bottom: .75rem; }
+.compat-item span  { font-size: 13px; font-weight: 500; color: var(--muted); }
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact-section { background: var(--bg2); }
+.contact-wrap {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+.contact-info h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.contact-info p { color: var(--muted); font-size: 14px; line-height: 1.8; margin-bottom: 1.5rem; }
+.contact-detail { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 1rem; }
+.cdi {
+  width: 36px;
+  height: 36px;
+  background: rgba(245,158,11,.1);
+  border: 1px solid rgba(245,158,11,.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.cdt { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.cdt strong { display: block; color: var(--text); font-size: 14px; margin-bottom: 2px; }
+
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+  transition: border-color .2s;
+  font-family: 'Inter', sans-serif;
+  resize: none;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus { border-color: rgba(245,158,11,.5); }
+.form-group select option { background: var(--bg2); }
+.submit-btn {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  padding: 13px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity .2s;
+  margin-top: .5rem;
+}
+.submit-btn:hover { opacity: .85; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+.footer-logo {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+.footer-logo span { color: var(--accent); }
+footer p { font-size: 13px; color: var(--muted); }
+
+/* ============================================================
+   RESPONSIVE — mobile
+   ============================================================ */
+@media (max-width: 768px) {
+  .slide-inner    { grid-template-columns: 1fr; text-align: center; padding: 6rem 1.5rem 5rem; }
+  .slide-visual   { display: none; }
+  .slide-btns     { justify-content: center; }
+  .slide-specs-row{ justify-content: center; }
+  .contact-wrap   { grid-template-columns: 1fr; }
+  .form-row       { grid-template-columns: 1fr; }
+  .nav-links      { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav>
+  <div class="nav-inner">
+    <!-- LOGO: Replace the text below with an <img> tag if you have a logo -->
+    <div class="logo">ATISHAY <span>ENTERPRISES</span></div>
+
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#compatibility">Compatibility</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <button class="nav-cta"
+      onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+      Get a Quote
+    </button>
+  </div>
+</nav>
+
+
+<!-- ============================================================
+     HERO SLIDER
+     To add real images: replace each battery-placeholder div with
+     <img src="your-image.jpg" style="width:100%;height:100%;object-fit:cover"/>
+     ============================================================ -->
+<div class="hero">
+
+  <div class="slider" id="slider">
+
+    <!-- ——— SLIDE 1: GREEN ——— -->
+    <div class="slide slide-green">
+      <div class="slide-inner">
+        <div class="slide-text">
+          <span class="slide-badge badge-green">⚡ EcoCharge Series</span>
+          <h1>Green Series<br/>Battery</h1>
+          <p>Engineered for electric scooters — high cycle life, maintenance-free VRLA/AGM technology for clean, efficient urban riding.</p>
+          <div class="slide-specs-row">
+            <div class="spec-chip chip-green"><span class="label">Voltage</span><span class="value">12V</span></div>
+            <div class="spec-chip chip-green"><span class="label">Capacity</span><span class="value">5–9 Ah</span></div>
+            <div class="spec-chip chip-green"><span class="label">Warranty</span><span class="value">18 Mo</span></div>
+          </div>
+          <div class="slide-btns">
+            <a href="#contact" class="btn-primary">Get a Quote</a>
+            <a href="#products" class="btn-outline">View All Products</a>
+          </div>
+        </div>
+        <div class="slide-visual">
+          <div class="battery-img-wrap">
+            <!-- REPLACE THIS with <img src="green-battery.jpg" .../> when you have product photos -->
+            <div class="battery-placeholder batt-green">
+              <div class="battery-icon-large">
+                <div class="battery-fill"></div>
+              </div>
+              <span class="battery-label-text">Green Series</span>
+              <span class="battery-model-text">AE-GR-12</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ——— SLIDE 2: BLUE ——— -->
+    <div class="slide slide-blue">
+      <div class="slide-inner">
+        <div class="slide-text">
+          <span class="slide-badge badge-blue">🔋 PowerMax Series</span>
+          <h1>Blue Series<br/>Battery</h1>
+          <p>Built for motorcycles and bikes — enhanced flooded technology delivering strong cold-cranking amps and long service life.</p>
+          <div class="slide-specs-row">
+            <div class="spec-chip chip-blue"><span class="label">Voltage</span><span class="value">12V</span></div>
+            <div class="spec-chip chip-blue"><span class="label">Capacity</span><span class="value">7–14 Ah</span></div>
+            <div class="spec-chip chip-blue"><span class="label">Warranty</span><span class="value">24 Mo</span></div>
+          </div>
+          <div class="slide-btns">
+            <a href="#contact" class="btn-primary">Get a Quote</a>
+            <a href="#products" class="btn-outline">View All Products</a>
+          </div>
+        </div>
+        <div class="slide-visual">
+          <div class="battery-img-wrap">
+            <!-- REPLACE THIS with <img src="blue-battery.jpg" .../> when you have product photos -->
+            <div class="battery-placeholder batt-blue">
+              <div class="battery-icon-large">
+                <div class="battery-fill"></div>
+              </div>
+              <span class="battery-label-text">Blue Series</span>
+              <span class="battery-model-text">AE-BL-12</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ——— SLIDE 3: RED ——— -->
+    <div class="slide slide-red">
+      <div class="slide-inner">
+        <div class="slide-text">
+          <span class="slide-badge badge-red">🏍️ TurboStart Series</span>
+          <h1>Red Series<br/>Battery</h1>
+          <p>Premium high-CCA AGM battery for sports bikes — instant ignition, vibration resistance, and peak performance on demand.</p>
+          <div class="slide-specs-row">
+            <div class="spec-chip chip-red"><span class="label">Voltage</span><span class="value">12V</span></div>
+            <div class="spec-chip chip-red"><span class="label">Capacity</span><span class="value">9–18 Ah</span></div>
+            <div class="spec-chip chip-red"><span class="label">Warranty</span><span class="value">24 Mo</span></div>
+          </div>
+          <div class="slide-btns">
+            <a href="#contact" class="btn-primary">Get a Quote</a>
+            <a href="#products" class="btn-outline">View All Products</a>
+          </div>
+        </div>
+        <div class="slide-visual">
+          <div class="battery-img-wrap">
+            <!-- REPLACE THIS with <img src="red-battery.jpg" .../> when you have product photos -->
+            <div class="battery-placeholder batt-red">
+              <div class="battery-icon-large">
+                <div class="battery-fill"></div>
+              </div>
+              <span class="battery-label-text">Red Series</span>
+              <span class="battery-model-text">AE-RD-12</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ——— SLIDE 4: GREY ——— -->
+    <div class="slide slide-grey">
+      <div class="slide-inner">
+        <div class="slide-text">
+          <span class="slide-badge badge-grey">🛵 DuraRide Series</span>
+          <h1>Grey Series<br/>Battery</h1>
+          <p>Dependable maintenance-free battery for scooters and mopeds — lightweight, spill-proof, and designed for everyday reliability.</p>
+          <div class="slide-specs-row">
+            <div class="spec-chip chip-grey"><span class="label">Voltage</span><span class="value">12V</span></div>
+            <div class="spec-chip chip-grey"><span class="label">Capacity</span><span class="value">5–12 Ah</span></div>
+            <div class="spec-chip chip-grey"><span class="label">Warranty</span><span class="value">12 Mo</span></div>
+          </div>
+          <div class="slide-btns">
+            <a href="#contact" class="btn-primary">Get a Quote</a>
+            <a href="#products" class="btn-outline">View All Products</a>
+          </div>
+        </div>
+        <div class="slide-visual">
+          <div class="battery-img-wrap">
+            <!-- REPLACE THIS with <img src="grey-battery.jpg" .../> when you have product photos -->
+            <div class="battery-placeholder batt-grey">
+              <div class="battery-icon-large">
+                <div class="battery-fill"></div>
+              </div>
+              <span class="battery-label-text">Grey Series</span>
+              <span class="battery-model-text">AE-GY-12</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /slider -->
+
+  <!-- Slide counter -->
+  <div class="slide-counter" id="slideCounter">01 / 04</div>
+
+  <!-- Navigation arrows + dots -->
+  <div class="slider-controls">
+    <button class="slider-arrow" onclick="changeSlide(-1)" aria-label="Previous">&#8592;</button>
+    <div class="slider-dots" id="sliderDots">
+      <button class="dot active" onclick="goToSlide(0)"></button>
+      <button class="dot" onclick="goToSlide(1)"></button>
+      <button class="dot" onclick="goToSlide(2)"></button>
+      <button class="dot" onclick="goToSlide(3)"></button>
+    </div>
+    <button class="slider-arrow" onclick="changeSlide(1)" aria-label="Next">&#8594;</button>
+  </div>
+
+</div><!-- /hero -->
+
+
+<!-- ============================================================
+     STATS BAR
+     Edit the numbers and labels here
+     ============================================================ -->
+<div class="stats">
+  <div class="stats-grid">
+    <div><div class="stat-num">10+</div><div class="stat-label">Years of Manufacturing</div></div>
+    <div><div class="stat-num">4</div><div class="stat-label">Battery Variants</div></div>
+    <div><div class="stat-num">50K+</div><div class="stat-label">Batteries Delivered</div></div>
+    <div><div class="stat-num">98%</div><div class="stat-label">Customer Satisfaction</div></div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     PRODUCT CARDS
+     Edit each card's name, model, specs, and badge below
+     ============================================================ -->
+<section id="products">
+  <div class="container">
+    <div class="section-tag">Our Product Range</div>
+    <h2 class="section-title">Four Variants. One Purpose.</h2>
+    <p class="section-sub">Each variant is engineered for a specific performance profile — pick the right battery for your vehicle.</p>
+
+    <div class="products-grid">
+
+      <!-- GREEN CARD -->
+      <div class="prod-card">
+        <div class="prod-stripe stripe-green"></div>
+        <div class="prod-img prod-green">
+          <!-- REPLACE with: <img src="green-battery.jpg" alt="Green Series" style="width:100%;height:100%;object-fit:cover"/> -->
+          <div class="prod-img-placeholder">
+            <div class="mini-battery">
+              <div class="mini-battery-fill"></div>
+            </div>
+          </div>
+        </div>
+        <div class="prod-body">
+          <span class="prod-badge badge-green-sm">EcoCharge</span>
+          <div class="prod-name">Green Series</div>
+          <div class="prod-model">Model: AE-GR-12</div>
+          <ul class="prod-specs">
+            <li><div class="spec-dot dot-green"></div>Voltage: <span class="spec-val">12V</span></li>
+            <li><div class="spec-dot dot-green"></div>Capacity: <span class="spec-val">5Ah – 9Ah</span></li>
+            <li><div class="spec-dot dot-green"></div>Technology: <span class="spec-val">VRLA / AGM</span></li>
+            <li><div class="spec-dot dot-green"></div>Best For: <span class="spec-val">Electric Scooters</span></li>
+            <li><div class="spec-dot dot-green"></div>Warranty: <span class="spec-val">18 Months</span></li>
+          </ul>
+          <a href="#contact" class="prod-link link-green">Enquire Now →</a>
+        </div>
+      </div>
+
+      <!-- BLUE CARD -->
+      <div class="prod-card">
+        <div class="prod-stripe stripe-blue"></div>
+        <div class="prod-img prod-blue">
+          <!-- REPLACE with: <img src="blue-battery.jpg" alt="Blue Series" style="width:100%;height:100%;object-fit:cover"/> -->
+          <div class="prod-img-placeholder">
+            <div class="mini-battery">
+              <div class="mini-battery-fill"></div>
+            </div>
+          </div>
+        </div>
+        <div class="prod-body">
+          <span class="prod-badge badge-blue-sm">PowerMax</span>
+          <div class="prod-name">Blue Series</div>
+          <div class="prod-model">Model: AE-BL-12</div>
+          <ul class="prod-specs">
+            <li><div class="spec-dot dot-blue"></div>Voltage: <span class="spec-val">12V</span></li>
+            <li><div class="spec-dot dot-blue"></div>Capacity: <span class="spec-val">7Ah – 14Ah</span></li>
+            <li><div class="spec-dot dot-blue"></div>Technology: <span class="spec-val">Enhanced Flooded</span></li>
+            <li><div class="spec-dot dot-blue"></div>Best For: <span class="spec-val">Motorcycles / Bikes</span></li>
+            <li><div class="spec-dot dot-blue"></div>Warranty: <span class="spec-val">24 Months</span></li>
+          </ul>
+          <a href="#contact" class="prod-link link-blue">Enquire Now →</a>
+        </div>
+      </div>
+
+      <!-- RED CARD -->
+      <div class="prod-card">
+        <div class="prod-stripe stripe-red"></div>
+        <div class="prod-img prod-red">
+          <!-- REPLACE with: <img src="red-battery.jpg" alt="Red Series" style="width:100%;height:100%;object-fit:cover"/> -->
+          <div class="prod-img-placeholder">
+            <div class="mini-battery">
+              <div class="mini-battery-fill"></div>
+            </div>
+          </div>
+        </div>
+        <div class="prod-body">
+          <span class="prod-badge badge-red-sm">TurboStart</span>
+          <div class="prod-name">Red Series</div>
+          <div class="prod-model">Model: AE-RD-12</div>
+          <ul class="prod-specs">
+            <li><div class="spec-dot dot-red"></div>Voltage: <span class="spec-val">12V</span></li>
+            <li><div class="spec-dot dot-red"></div>Capacity: <span class="spec-val">9Ah – 18Ah</span></li>
+            <li><div class="spec-dot dot-red"></div>Technology: <span class="spec-val">High CCA AGM</span></li>
+            <li><div class="spec-dot dot-red"></div>Best For: <span class="spec-val">Sports Bikes / Premium</span></li>
+            <li><div class="spec-dot dot-red"></div>Warranty: <span class="spec-val">24 Months</span></li>
+          </ul>
+          <a href="#contact" class="prod-link link-red">Enquire Now →</a>
+        </div>
+      </div>
+
+      <!-- GREY CARD -->
+      <div class="prod-card">
+        <div class="prod-stripe stripe-grey"></div>
+        <div class="prod-img prod-grey">
+          <!-- REPLACE with: <img src="grey-battery.jpg" alt="Grey Series" style="width:100%;height:100%;object-fit:cover"/> -->
+          <div class="prod-img-placeholder">
+            <div class="mini-battery">
+              <div class="mini-battery-fill"></div>
+            </div>
+          </div>
+        </div>
+        <div class="prod-body">
+          <span class="prod-badge badge-grey-sm">DuraRide</span>
+          <div class="prod-name">Grey Series</div>
+          <div class="prod-model">Model: AE-GY-12</div>
+          <ul class="prod-specs">
+            <li><div class="spec-dot dot-grey"></div>Voltage: <span class="spec-val">12V</span></li>
+            <li><div class="spec-dot dot-grey"></div>Capacity: <span class="spec-val">5Ah – 12Ah</span></li>
+            <li><div class="spec-dot dot-grey"></div>Technology: <span class="spec-val">MF / Maintenance-Free</span></li>
+            <li><div class="spec-dot dot-grey"></div>Best For: <span class="spec-val">Scooters / Mopeds</span></li>
+            <li><div class="spec-dot dot-grey"></div>Warranty: <span class="spec-val">12 Months</span></li>
+          </ul>
+          <a href="#contact" class="prod-link link-grey">Enquire Now →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     WHY US
+     Edit the cards below to add/remove features
+     ============================================================ -->
+<section id="why" class="why">
+  <div class="container">
+    <div class="section-tag">Why Atishay</div>
+    <h2 class="section-title">Engineered for the Road Ahead</h2>
+    <p class="section-sub">Every battery leaving our facility meets rigorous quality benchmarks before it reaches you.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🏭</div>
+        <h3>In-House Manufacturing</h3>
+        <p>Full control over production ensures consistent quality from raw material to finished product.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🧪</div>
+        <h3>Quality Tested</h3>
+        <p>Every battery undergoes charge-discharge cycle testing, vibration testing, and CCA validation.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🌡️</div>
+        <h3>All-Weather Ready</h3>
+        <p>Formulated to deliver peak performance in extreme Indian summers and cold winters alike.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔒</div>
+        <h3>Warranty Assured</h3>
+        <p>Up to 24-month warranty backed by a nationwide dealer and service network.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🚚</div>
+        <h3>Pan-India Supply</h3>
+        <p>Reliable delivery across India to OEMs, dealers, and aftermarket distributors.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">♻️</div>
+        <h3>Eco Responsible</h3>
+        <p>Battery recycling programme ensures responsible disposal and reduced environmental impact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     COMPATIBILITY
+     Add or remove .compat-item blocks as needed
+     ============================================================ -->
+<section id="compatibility">
+  <div class="container">
+    <div class="section-tag">Compatibility</div>
+    <h2 class="section-title">Fits Your Vehicle</h2>
+    <p class="section-sub">Our batteries are compatible with all major two-wheeler categories on Indian roads.</p>
+    <div class="compat-grid">
+      <div class="compat-item"><div class="icon">🏍️</div><span>Motorcycles</span></div>
+      <div class="compat-item"><div class="icon">🛵</div><span>Scooters</span></div>
+      <div class="compat-item"><div class="icon">⚡</div><span>E-Scooters</span></div>
+      <div class="compat-item"><div class="icon">🏎️</div><span>Sports Bikes</span></div>
+      <div class="compat-item"><div class="icon">🛺</div><span>E-Rickshaws</span></div>
+      <div class="compat-item"><div class="icon">🔧</div><span>Custom Builds</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CONTACT
+     Edit address, phone, and email below
+     ============================================================ -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="section-tag">Get in Touch</div>
+    <h2 class="section-title">Request a Quote or Enquiry</h2>
+    <p class="section-sub">Reach out for bulk orders, dealership enquiries, or any product questions.</p>
+
+    <div class="contact-wrap">
+
+      <!-- CONTACT INFO — edit address, phone, email here -->
+      <div class="contact-info">
+        <h3>Atishay Enterprises</h3>
+        <p>Manufacturer and supplier of premium two-wheeler batteries. We serve OEMs, distributors, and retail dealers across India.</p>
+        <div class="contact-detail">
+          <div class="cdi">📍</div>
+          <div class="cdt"><strong>Address</strong>Your manufacturing address,<br/>City, State, PIN</div>
+        </div>
+        <div class="contact-detail">
+          <div class="cdi">📞</div>
+          <div class="cdt"><strong>Phone</strong>+91 XXXXX XXXXX</div>
+        </div>
+        <div class="contact-detail">
+          <div class="cdi">✉️</div>
+          <div class="cdt"><strong>Email</strong>info@atishayenterprises.com</div>
+        </div>
+        <div class="contact-detail">
+          <div class="cdi">🕘</div>
+          <div class="cdt"><strong>Working Hours</strong>Mon – Sat, 9:00 AM – 6:00 PM</div>
+        </div>
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div>
+        <div class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="Your name"/>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+91 XXXXX XXXXX"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="you@email.com"/>
+          </div>
+          <div class="form-group">
+            <label>Product Interested In</label>
+            <select>
+              <option value="">Select a variant</option>
+              <option>Green Series – EcoCharge (AE-GR-12)</option>
+              <option>Blue Series – PowerMax (AE-BL-12)</option>
+              <option>Red Series – TurboStart (AE-RD-12)</option>
+              <option>Grey Series – DuraRide (AE-GY-12)</option>
+              <option>All Variants / Bulk Enquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="4" placeholder="Tell us your requirement — quantity, vehicle type, delivery location..."></textarea>
+          </div>
+          <button class="submit-btn"
+            onclick="alert('Thank you for your enquiry! We will contact you within 24 hours.')">
+            Send Enquiry ⚡
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="footer-logo">ATISHAY <span>ENTERPRISES</span></div>
+  <p style="margin:.5rem 0">Premium Two-Wheeler Battery Manufacturer · Made in India 🇮🇳</p>
+  <p>© 2025 Atishay Enterprises. All rights reserved.</p>
+</footer>
+
+
+<!-- ============================================================
+     SLIDER JAVASCRIPT
+     changeSlide(-1) = previous, changeSlide(1) = next
+     goToSlide(n) = jump to slide n (0-indexed)
+     AUTO_INTERVAL = milliseconds between auto-slides (4000 = 4s)
+     ============================================================ -->
+<script>
+  var current = 0;
+  var total   = 4;
+  var AUTO_INTERVAL = 4000; // change this to adjust auto-slide speed
+  var timer;
+
+  function updateSlider() {
+    document.getElementById('slider').style.transform =
+      'translateX(-' + (current * 100) + '%)';
+
+    var dots = document.querySelectorAll('.dot');
+    dots.forEach(function(d, i) {
+      d.classList.toggle('active', i === current);
+    });
+
+    var n = current + 1;
+    document.getElementById('slideCounter').textContent =
+      (n < 10 ? '0' : '') + n + ' / 0' + total;
+  }
+
+  function changeSlide(dir) {
+    current = (current + dir + total) % total;
+    updateSlider();
+    resetTimer();
+  }
+
+  function goToSlide(n) {
+    current = n;
+    updateSlider();
+    resetTimer();
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(function() { changeSlide(1); }, AUTO_INTERVAL);
+  }
+
+  // Start auto-slide on page load
+  timer = setInterval(function() { changeSlide(1); }, AUTO_INTERVAL);
+
+  // Pause on hover
+  document.querySelector('.hero').addEventListener('mouseenter', function() {
+    clearInterval(timer);
+  });
+  document.querySelector('.hero').addEventListener('mouseleave', function() {
+    resetTimer();
+  });
+
+  // Touch / swipe support for mobile
+  var startX = 0;
+  document.querySelector('.hero').addEventListener('touchstart', function(e) {
+    startX = e.touches[0].clientX;
+  });
+  document.querySelector('.hero').addEventListener('touchend', function(e) {
+    var diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) changeSlide(diff > 0 ? 1 : -1);
+  });
+</script>
+
+</body>
+</html>
