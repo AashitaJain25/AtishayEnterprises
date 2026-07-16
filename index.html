@@ -24,7 +24,7 @@
   HOW TO ADD IMAGES:
   ──────────────────
   - Upload all product photos to an "images/" folder in GitHub
-  - Name them: green.jpg, blue.jpg, red.jpg, grey.jpg,
+  - Name them: green.jpg, 12V-4LB.jpg, red.jpg, grey.jpg,
                purple.jpg, silver.jpg
   - Then find the comment <!-- ADD IMAGE HERE -->
 -->
@@ -43,7 +43,7 @@
 
   /* Battery variant colors — change these to update ALL variant styling */
   --green:    #22c55e;
-  --blue:     #3b82f6;
+  --12V-4LB:     #3b82f6;
   --red:      #ef4444;
   --grey:     #94a3b8;
   --purple:   #a855f7;
@@ -73,16 +73,16 @@ nav { position:sticky; top:0; z-index:100; background:rgba(13,15,20,.93); backdr
 .hero { position:relative; min-height:92vh; display:flex; align-items:center; overflow:hidden; }
 .slider { position:absolute; inset:0; display:flex; transition:transform .8s cubic-bezier(.77,0,.18,1); }
 .slide { min-width:100%; position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; }
-.slide-green  { background:radial-gradient(ellipse 80% 70% at 60% 50%,rgba(34,197,94,.12) 0%,#0d0f14 70%); }
-.slide-blue   { background:radial-gradient(ellipse 80% 70% at 60% 50%,rgba(59,130,246,.12) 0%,#0d0f14 70%); }
+.slide-12V-3LC { background:radial-gradient(ellipse 80% 70% at 60% 50%,rgba(34,197,94,.12) 0%,#0d0f14 70%); }
+.slide-12V-4LB   { background:radial-gradient(ellipse 80% 70% at 60% 50%,rgba(59,130,246,.12) 0%,#0d0f14 70%); }
 .slide-red    { background:radial-gradient(ellipse 80% 70% at 60% 50%,rgba(239,68,68,.12) 0%,#0d0f14 70%); }
 .slide-grey   { background:radial-gradient(ellipse 80% 70% at 60% 50%,rgba(148,163,184,.12) 0%,#0d0f14 70%); }
 .slide-purple { background:radial-gradient(ellipse 80% 70% at 60% 50%,rgba(168,85,247,.12) 0%,#0d0f14 70%); }
 .slide-silver { background:radial-gradient(ellipse 80% 70% at 60% 50%,rgba(203,213,225,.12) 0%,#0d0f14 70%); }
 .slide-inner { max-width:1200px; width:100%; margin:auto; padding:4rem 2rem; display:grid; grid-template-columns:1fr 1.2fr; align-items:center; gap:2rem; }
 .slide-badge { display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:6px 16px; border-radius:100px; margin-bottom:1.5rem; border:1px solid; }
-.badge-green  { background:rgba(34,197,94,.1);  border-color:rgba(34,197,94,.3);  color:var(--green);  }
-.badge-blue   { background:rgba(59,130,246,.1); border-color:rgba(59,130,246,.3); color:var(--blue);   }
+.badge-12V-3LC { background:rgba(34,197,94,.1);  border-color:rgba(34,197,94,.3);  color:var(--green);  }
+.badge-12V-4LB   { background:rgba(59,130,246,.1); border-color:rgba(59,130,246,.3); color:var(--12V-4LB);   }
 .badge-red    { background:rgba(239,68,68,.1);  border-color:rgba(239,68,68,.3);  color:var(--red);    }
 .badge-grey   { background:rgba(148,163,184,.1);border-color:rgba(148,163,184,.3);color:var(--grey);   }
 .badge-purple { background:rgba(168,85,247,.1); border-color:rgba(168,85,247,.3); color:var(--purple); }
@@ -93,8 +93,8 @@ nav { position:sticky; top:0; z-index:100; background:rgba(13,15,20,.93); backdr
 .spec-chip { display:flex; flex-direction:column; gap:2px; }
 .spec-chip .label { font-size:10px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--muted); }
 .spec-chip .value { font-size:18px; font-weight:700; }
-.chip-green .value  { color:var(--green);  }
-.chip-blue .value   { color:var(--blue);   }
+.chip-12V-3LC.value  { color:var(--green);  }
+.chip-12V-4LB .value   { color:var(--12V-4LB);   }
 .chip-red .value    { color:var(--red);    }
 .chip-grey .value   { color:var(--grey);   }
 .chip-purple .value { color:var(--purple); }
@@ -114,12 +114,12 @@ nav { position:sticky; top:0; z-index:100; background:rgba(13,15,20,.93); backdr
 .batt-fill { width:75px; border-radius:4px; }
 .batt-lbl { font-family:'Rajdhani',sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; }
 
-.batt-green  .batt-icon  { border-color:var(--green);  background:rgba(34,197,94,.06);  }
-.batt-green  .batt-fill  { background:var(--green);  height:115px; }
-.batt-green  .batt-lbl   { color:var(--green);  }
-.batt-blue   .batt-icon  { border-color:var(--blue);   background:rgba(59,130,246,.06); }
-.batt-blue   .batt-fill  { background:var(--blue);   height:100px; }
-.batt-blue   .batt-lbl   { color:var(--blue);   }
+.batt-12V-3LC .batt-icon  { border-color:var(--green);  background:rgba(34,197,94,.06);  }
+.batt-12V-3LC .batt-fill  { background:var(--green);  height:115px; }
+.batt-12V-3LC .batt-lbl   { color:var(--green);  }
+.batt-12V-4LB   .batt-icon  { border-color:var(--12V-4LB);   background:rgba(59,130,246,.06); }
+.batt-12V-4LB   .batt-fill  { background:var(--12V-4LB);   height:100px; }
+.batt-12V-4LB   .batt-lbl   { color:var(--12V-4LB);   }
 .batt-red    .batt-icon  { border-color:var(--red);    background:rgba(239,68,68,.06);  }
 .batt-red    .batt-fill  { background:var(--red);    height:135px; }
 .batt-red    .batt-lbl   { color:var(--red);    }
@@ -160,8 +160,8 @@ section { padding:5rem 2rem; }
 .prod-card { background:var(--bg2); border:1px solid var(--border); border-radius:16px; overflow:hidden; transition:all .25s; }
 .prod-card:hover { transform:translateY(-4px); border-color:rgba(255,255,255,.2); }
 .prod-stripe { height:3px; width:100%; }
-.stripe-green  { background:var(--green);  }
-.stripe-blue   { background:var(--blue);   }
+.stripe-12V-3LC { background:var(--green);  }
+.stripe-12V-4LB   { background:var(--12V-4LB);   }
 .stripe-red    { background:var(--red);    }
 .stripe-grey   { background:var(--grey);   }
 .stripe-purple { background:var(--purple); }
@@ -176,8 +176,8 @@ section { padding:5rem 2rem; }
 .mini-batt::before { content:''; position:absolute; top:-8px; width:22px; height:7px; border-radius:2px 2px 0 0; border:2.5px solid; border-bottom:none; border-color:inherit; }
 .mini-batt-fill { width:38px; border-radius:3px; }
 
-.prod-img.c-green  { background:rgba(34,197,94,.06);  } .prod-img.c-green  .mini-batt { border-color:var(--green);  } .prod-img.c-green  .mini-batt-fill { background:var(--green);  height:55px; }
-.prod-img.c-blue   { background:rgba(59,130,246,.06); } .prod-img.c-blue   .mini-batt { border-color:var(--blue);   } .prod-img.c-blue   .mini-batt-fill { background:var(--blue);   height:48px; }
+.prod-img.c-12V-3LC { background:rgba(34,197,94,.06);  } .prod-img.c-12V-3LC .mini-batt { border-color:var(--green);  } .prod-img.c-12V-3LC .mini-batt-fill { background:var(--green);  height:55px; }
+.prod-img.c-12V-4LB   { background:rgba(59,130,246,.06); } .prod-img.c-12V-4LB   .mini-batt { border-color:var(--12V-4LB);   } .prod-img.c-12V-4LB   .mini-batt-fill { background:var(--12V-4LB);   height:48px; }
 .prod-img.c-red    { background:rgba(239,68,68,.06);  } .prod-img.c-red    .mini-batt { border-color:var(--red);    } .prod-img.c-red    .mini-batt-fill { background:var(--red);    height:62px; }
 .prod-img.c-grey   { background:rgba(148,163,184,.06);} .prod-img.c-grey   .mini-batt { border-color:var(--grey);   } .prod-img.c-grey   .mini-batt-fill { background:var(--grey);   height:42px; }
 .prod-img.c-purple { background:rgba(168,85,247,.06); } .prod-img.c-purple .mini-batt { border-color:var(--purple); } .prod-img.c-purple .mini-batt-fill { background:var(--purple); height:58px; }
@@ -185,8 +185,8 @@ section { padding:5rem 2rem; }
 
 .prod-body { padding:1.4rem; }
 .prod-badge { display:inline-block; font-size:11px; font-weight:700; letter-spacing:1px; padding:3px 10px; border-radius:100px; margin-bottom:.75rem; text-transform:uppercase; }
-.pb-green  { background:rgba(34,197,94,.12);   color:var(--green);  }
-.pb-blue   { background:rgba(59,130,246,.12);  color:var(--blue);   }
+.pb-12V-3LC { background:rgba(34,197,94,.12);   color:var(--green);  }
+.pb-12V-4LB   { background:rgba(59,130,246,.12);  color:var(--12V-4LB);   }
 .pb-red    { background:rgba(239,68,68,.12);   color:var(--red);    }
 .pb-grey   { background:rgba(148,163,184,.12); color:var(--grey);   }
 .pb-purple { background:rgba(168,85,247,.12);  color:var(--purple); }
@@ -196,15 +196,15 @@ section { padding:5rem 2rem; }
 .prod-specs { list-style:none; display:flex; flex-direction:column; gap:6px; margin-bottom:1.25rem; }
 .prod-specs li { font-size:13px; color:var(--muted); display:flex; align-items:center; gap:8px; }
 .sdot { width:5px; height:5px; border-radius:50%; flex-shrink:0; }
-.sdot-green  { background:var(--green);  }
-.sdot-blue   { background:var(--blue);   }
+.sdot-12V-3LC { background:var(--green);  }
+.sdot-12V-4LB   { background:var(--12V-4LB);   }
 .sdot-red    { background:var(--red);    }
 .sdot-grey   { background:var(--grey);   }
 .sdot-purple { background:var(--purple); }
 .sdot-silver { background:var(--silver); }
 .spec-val { color:var(--text); font-weight:500; }
 .prod-link { font-size:13px; font-weight:600; display:inline-flex; align-items:center; gap:6px; transition:gap .2s; }
-.pl-green  { color:var(--green);  } .pl-blue { color:var(--blue); } .pl-red { color:var(--red); }
+.pl-12V-3LC { color:var(--green);  } .pl-12V-4LB { color:var(--12V-4LB); } .pl-red { color:var(--red); }
 .pl-grey   { color:var(--grey);   } .pl-purple { color:var(--purple); } .pl-silver { color:var(--silver); }
 .prod-link:hover { gap:10px; }
 
@@ -372,17 +372,17 @@ footer p { font-size:13px; color:var(--muted); }
 <div class="hero">
   <div class="slider" id="slider">
 
-    <!-- SLIDE 1: GREEN -->
+    <!-- SLIDE 1: 12V-3LC-->
     <div class="slide slide-green">
       <div class="slide-inner">
         <div class="slide-text">
           <span class="slide-badge badge-green">⚡ RiderZon · EcoCharge</span>
-          <h1>Green Series<br/>Battery</h1>
+          <h1>12V-3LCSeries<br/>Battery</h1>
           <p>Engineered for electric scooters — high cycle life, maintenance-free VRLA/AGM technology for clean, efficient urban riding.</p>
           <div class="slide-specs-row">
             <div class="spec-chip chip-green"><span class="label">Voltage</span><span class="value">12V</span></div>
-            <div class="spec-chip chip-green"><span class="label">Capacity</span><span class="value">5–9 Ah</span></div>
-            <div class="spec-chip chip-green"><span class="label">Warranty</span><span class="value">18 Mo</span></div>
+            <div class="spec-chip chip-green"><span class="label">Capacity</span><span class="value">3LC</span></div>
+            <div class="spec-chip chip-green"><span class="label">Warranty</span><span class="value">12 Months</span></div>
           </div>
           <div class="slide-btns">
             <a href="#contact" class="btn-primary">Get a Quote</a>
@@ -397,17 +397,17 @@ footer p { font-size:13px; color:var(--muted); }
       </div>
     </div>
 
-    <!-- SLIDE 2: BLUE -->
-    <div class="slide slide-blue">
+    <!-- SLIDE 2: 12V-4LB -->
+    <div class="slide slide-12V-4LB">
       <div class="slide-inner">
         <div class="slide-text">
-          <span class="slide-badge badge-blue">🔋 RiderZon · PowerMax</span>
-          <h1>Blue Series<br/>Battery</h1>
-          <p>Built for motorcycles and bikes — enhanced flooded technology delivering strong cold-cranking amps and long service life.</p>
+          <span class="slide-badge badge-12V-4LB">🔋 RiderZon · PowerMax</span>
+          <h1>12V-4LB Series<br/>Battery</h1>
+          <p>Built for motorcycles and bikes — enhanced flooded technology delivering strong cold-cranking 'amps' and long service life.</p>
           <div class="slide-specs-row">
-            <div class="spec-chip chip-blue"><span class="label">Voltage</span><span class="value">12V</span></div>
-            <div class="spec-chip chip-blue"><span class="label">Capacity</span><span class="value">7–14 Ah</span></div>
-            <div class="spec-chip chip-blue"><span class="label">Warranty</span><span class="value">24 Mo</span></div>
+            <div class="spec-chip chip-12V-4LB"><span class="label">Voltage</span><span class="value">12V</span></div>
+            <div class="spec-chip chip-12V-4LB"><span class="label">Capacity</span><span class="value">4LB</span></div>
+            <div class="spec-chip chip-12V-4LB"><span class="label">Warranty</span><span class="value">12 Months</span></div>
           </div>
           <div class="slide-btns">
             <a href="#contact" class="btn-primary">Get a Quote</a>
@@ -422,17 +422,17 @@ footer p { font-size:13px; color:var(--muted); }
       </div>
     </div>
 
-    <!-- SLIDE 3: RED -->
+    <!-- SLIDE 3: ITZ 5LB -->
     <div class="slide slide-red">
       <div class="slide-inner">
         <div class="slide-text">
           <span class="slide-badge badge-red">🏍️ RiderZon · TurboStart</span>
-          <h1>Red Series<br/>Battery</h1>
+          <h1>ITZ 5LB<br/>Battery</h1>
           <p>Premium high-CCA AGM battery for sports bikes — instant ignition, vibration resistance, and peak performance on demand.</p>
           <div class="slide-specs-row">
             <div class="spec-chip chip-red"><span class="label">Voltage</span><span class="value">12V</span></div>
-            <div class="spec-chip chip-red"><span class="label">Capacity</span><span class="value">9–18 Ah</span></div>
-            <div class="spec-chip chip-red"><span class="label">Warranty</span><span class="value">24 Mo</span></div>
+            <div class="spec-chip chip-red"><span class="label">Capacity</span><span class="value">5LB</span></div>
+            <div class="spec-chip chip-red"><span class="label">Warranty</span><span class="value">12 Months</span></div>
           </div>
           <div class="slide-btns">
             <a href="#contact" class="btn-primary">Get a Quote</a>
@@ -447,17 +447,17 @@ footer p { font-size:13px; color:var(--muted); }
       </div>
     </div>
 
-    <!-- SLIDE 4: GREY -->
+    <!-- SLIDE 4: 12V-5LB -->
     <div class="slide slide-grey">
       <div class="slide-inner">
         <div class="slide-text">
           <span class="slide-badge badge-grey">🛵 RiderZon · DuraRide</span>
-          <h1>Grey Series<br/>Battery</h1>
+          <h1>12V-5LB<br/>Battery</h1>
           <p>Dependable maintenance-free battery for scooters and mopeds — lightweight, spill-proof, and designed for everyday reliability.</p>
           <div class="slide-specs-row">
             <div class="spec-chip chip-grey"><span class="label">Voltage</span><span class="value">12V</span></div>
-            <div class="spec-chip chip-grey"><span class="label">Capacity</span><span class="value">5–12 Ah</span></div>
-            <div class="spec-chip chip-grey"><span class="label">Warranty</span><span class="value">12 Mo</span></div>
+            <div class="spec-chip chip-grey"><span class="label">Capacity</span><span class="value">5LB</span></div>
+            <div class="spec-chip chip-grey"><span class="label">Warranty</span><span class="value">12 Months</span></div>
           </div>
           <div class="slide-btns">
             <a href="#contact" class="btn-primary">Get a Quote</a>
@@ -477,12 +477,12 @@ footer p { font-size:13px; color:var(--muted); }
       <div class="slide-inner">
         <div class="slide-text">
           <span class="slide-badge badge-purple">⚡ RiderZon · UltraCharge</span>
-          <h1>Purple Series<br/>Battery</h1>
+          <h1>12 x 12 (12V16Ah)<br/>Battery</h1>
           <p>Advanced lithium-enhanced technology for premium two-wheelers — faster charging, longer life, and superior energy density.</p>
           <div class="slide-specs-row">
             <div class="spec-chip chip-purple"><span class="label">Voltage</span><span class="value">12V</span></div>
-            <div class="spec-chip chip-purple"><span class="label">Capacity</span><span class="value">8–16 Ah</span></div>
-            <div class="spec-chip chip-purple"><span class="label">Warranty</span><span class="value">24 Mo</span></div>
+            <div class="spec-chip chip-purple"><span class="label">Capacity</span><span class="value">16Ah</span></div>
+            <div class="spec-chip chip-purple"><span class="label">Warranty</span><span class="value">6 Months</span></div>
           </div>
           <div class="slide-btns">
             <a href="#contact" class="btn-primary">Get a Quote</a>
@@ -502,12 +502,12 @@ footer p { font-size:13px; color:var(--muted); }
       <div class="slide-inner">
         <div class="slide-text">
           <span class="slide-badge badge-silver">🔩 RiderZon · ElitePro</span>
-          <h1>Silver Series<br/>Battery</h1>
+          <h1>7 x 12 (12V8Ah)<br/>Battery</h1>
           <p>Our flagship heavy-duty battery — silver alloy plates for superior conductivity, designed for commercial and high-usage vehicles.</p>
           <div class="slide-specs-row">
             <div class="spec-chip chip-silver"><span class="label">Voltage</span><span class="value">12V</span></div>
-            <div class="spec-chip chip-silver"><span class="label">Capacity</span><span class="value">10–20 Ah</span></div>
-            <div class="spec-chip chip-silver"><span class="label">Warranty</span><span class="value">30 Mo</span></div>
+            <div class="spec-chip chip-silver"><span class="label">Capacity</span><span class="value">8Ah</span></div>
+            <div class="spec-chip chip-silver"><span class="label">Warranty</span><span class="value">6 Months</span></div>
           </div>
           <div class="slide-btns">
             <a href="#contact" class="btn-primary">Get a Quote</a>
@@ -566,7 +566,7 @@ footer p { font-size:13px; color:var(--muted); }
     <p class="section-sub">Each RiderZon variant is precision-engineered for a specific performance profile — choose the right battery for your vehicle.</p>
     <div class="products-grid">
 
-      <!-- GREEN -->
+      <!-- 12V-3LC-->
       <div class="prod-card">
         <div class="prod-stripe stripe-green"></div>
         <div class="prod-img c-green">
@@ -574,41 +574,39 @@ footer p { font-size:13px; color:var(--muted); }
         </div>
         <div class="prod-body">
           <span class="prod-badge pb-green">EcoCharge</span>
-          <div class="prod-name">Green Series</div>
-          <div class="prod-model">Model: AE-GR-12</div>
+          <div class="prod-name">12V-3LC Series</div>
           <ul class="prod-specs">
             <li><div class="sdot sdot-green"></div>Voltage: <span class="spec-val">12V</span></li>
-            <li><div class="sdot sdot-green"></div>Capacity: <span class="spec-val">5Ah – 9Ah</span></li>
-            <li><div class="sdot sdot-green"></div>Technology: <span class="spec-val">VRLA / AGM</span></li>
-            <li><div class="sdot sdot-green"></div>Best For: <span class="spec-val">Electric Scooters</span></li>
-            <li><div class="sdot sdot-green"></div>Warranty: <span class="spec-val">18 Months</span></li>
+            <li><div class="sdot sdot-green"></div>Capacity: <span class="spec-val">3LC</span></li>
+            <li><div class="sdot sdot-green"></div>Dimensions (mm): <span class="spec-val">Length 80 · Width 77 · Height 104</span></li>
+            <li><div class="sdot sdot-green"></div>Best For: <span class="spec-val">Motorcycles / Bikes</span></li>
+            <li><div class="sdot sdot-green"></div>Warranty: <span class="spec-val">12+2 Months</span></li>
           </ul>
           <a href="#contact" class="prod-link pl-green">Enquire Now →</a>
         </div>
       </div>
 
-      <!-- BLUE -->
+      <!-- 12V-4LB -->
       <div class="prod-card">
-        <div class="prod-stripe stripe-blue"></div>
-        <div class="prod-img c-blue">
+        <div class="prod-stripe stripe-12V-4LB"></div>
+        <div class="prod-img c-12V-4LB">
           <img src="batt_5lb.png" alt="12V-5LB Battery" style="width:100%;height:100%;object-fit:contain;padding:4px;"/>
         </div>
         <div class="prod-body">
-          <span class="prod-badge pb-blue">PowerMax</span>
-          <div class="prod-name">Blue Series</div>
-          <div class="prod-model">Model: AE-BL-12</div>
+          <span class="prod-badge pb-12V-4LB">PowerMax</span>
+          <div class="prod-name">12V-4LB Series</div>
           <ul class="prod-specs">
-            <li><div class="sdot sdot-blue"></div>Voltage: <span class="spec-val">12V</span></li>
-            <li><div class="sdot sdot-blue"></div>Capacity: <span class="spec-val">7Ah – 14Ah</span></li>
-            <li><div class="sdot sdot-blue"></div>Technology: <span class="spec-val">Enhanced Flooded</span></li>
-            <li><div class="sdot sdot-blue"></div>Best For: <span class="spec-val">Motorcycles / Bikes</span></li>
-            <li><div class="sdot sdot-blue"></div>Warranty: <span class="spec-val">24 Months</span></li>
+            <li><div class="sdot sdot-12V-4LB"></div>Voltage: <span class="spec-val">12V</span></li>
+            <li><div class="sdot sdot-12V-4LB"></div>Capacity: <span class="spec-val">4LB</span></li>
+            <li><div class="sdot sdot-12V-4LB"></div>Dimensions (mm): <span class="spec-val">Length 112 · Width 70 · Height 85</span></li>
+            <li><div class="sdot sdot-12V-4LB"></div>Best For: <span class="spec-val">Motorcycles / Bikes</span></li>
+            <li><div class="sdot sdot-12V-4LB"></div>Warranty: <span class="spec-val">12+2 Months</span></li>
           </ul>
-          <a href="#contact" class="prod-link pl-blue">Enquire Now →</a>
+          <a href="#contact" class="prod-link pl-12V-4LB">Enquire Now →</a>
         </div>
       </div>
 
-      <!-- RED -->
+      <!-- ITZ 5LB -->
       <div class="prod-card">
         <div class="prod-stripe stripe-red"></div>
         <div class="prod-img c-red">
@@ -616,20 +614,19 @@ footer p { font-size:13px; color:var(--muted); }
         </div>
         <div class="prod-body">
           <span class="prod-badge pb-red">TurboStart</span>
-          <div class="prod-name">Red Series</div>
-          <div class="prod-model">Model: AE-RD-12</div>
+          <div class="prod-name">ITZ 5LB Series</div>
           <ul class="prod-specs">
             <li><div class="sdot sdot-red"></div>Voltage: <span class="spec-val">12V</span></li>
-            <li><div class="sdot sdot-red"></div>Capacity: <span class="spec-val">9Ah – 18Ah</span></li>
-            <li><div class="sdot sdot-red"></div>Technology: <span class="spec-val">High CCA AGM</span></li>
+            <li><div class="sdot sdot-red"></div>Capacity: <span class="spec-val">5LB</span></li>
+            <li><div class="sdot sdot-red"></div>Dimensions (mm): <span class="spec-val">Length 113 · Width 69 · Height 107</span></li>
             <li><div class="sdot sdot-red"></div>Best For: <span class="spec-val">Sports Bikes / Premium</span></li>
-            <li><div class="sdot sdot-red"></div>Warranty: <span class="spec-val">24 Months</span></li>
+            <li><div class="sdot sdot-red"></div>Warranty: <span class="spec-val">12+2 Months</span></li>
           </ul>
           <a href="#contact" class="prod-link pl-red">Enquire Now →</a>
         </div>
       </div>
 
-      <!-- GREY -->
+      <!-- 12V-5LB -->
       <div class="prod-card">
         <div class="prod-stripe stripe-grey"></div>
         <div class="prod-img c-grey">
@@ -637,20 +634,19 @@ footer p { font-size:13px; color:var(--muted); }
         </div>
         <div class="prod-body">
           <span class="prod-badge pb-grey">DuraRide</span>
-          <div class="prod-name">Grey Series</div>
-          <div class="prod-model">Model: AE-GY-12</div>
+          <div class="prod-name">12V-5LB Series</div>
           <ul class="prod-specs">
             <li><div class="sdot sdot-grey"></div>Voltage: <span class="spec-val">12V</span></li>
-            <li><div class="sdot sdot-grey"></div>Capacity: <span class="spec-val">5Ah – 12Ah</span></li>
-            <li><div class="sdot sdot-grey"></div>Technology: <span class="spec-val">MF / Maintenance-Free</span></li>
-            <li><div class="sdot sdot-grey"></div>Best For: <span class="spec-val">Scooters / Mopeds</span></li>
-            <li><div class="sdot sdot-grey"></div>Warranty: <span class="spec-val">12 Months</span></li>
+            <li><div class="sdot sdot-grey"></div>Capacity: <span class="spec-val">5LB</span></li>
+            <li><div class="sdot sdot-grey"></div>Dimensions (mm): <span class="spec-val">Length 120 · Width 61 · Height 128</span></li>
+            <li><div class="sdot sdot-grey"></div>Best For: <span class="spec-val">Motorcycles / Bikes</span></li>
+            <li><div class="sdot sdot-grey"></div>Warranty: <span class="spec-val">12+2 Months</span></li>
           </ul>
           <a href="#contact" class="prod-link pl-grey">Enquire Now →</a>
         </div>
       </div>
 
-      <!-- PURPLE -->
+      <!-- 12 x 12  -->
       <div class="prod-card">
         <div class="prod-stripe stripe-purple"></div>
         <div class="prod-img c-purple">
@@ -659,19 +655,19 @@ footer p { font-size:13px; color:var(--muted); }
         <div class="prod-body">
           <span class="prod-badge pb-purple">UltraCharge</span>
           <div class="prod-name">Purple Series</div>
-          <div class="prod-model">Model: AE-PR-12</div>
+          <div class="prod-model">Model: 12V16Ah </div>
           <ul class="prod-specs">
             <li><div class="sdot sdot-purple"></div>Voltage: <span class="spec-val">12V</span></li>
-            <li><div class="sdot sdot-purple"></div>Capacity: <span class="spec-val">8Ah – 16Ah</span></li>
+            <li><div class="sdot sdot-purple"></div>Capacity: <span class="spec-val">16Ah</span></li>
             <li><div class="sdot sdot-purple"></div>Technology: <span class="spec-val">Li-Enhanced AGM</span></li>
             <li><div class="sdot sdot-purple"></div>Best For: <span class="spec-val">Premium Motorcycles</span></li>
-            <li><div class="sdot sdot-purple"></div>Warranty: <span class="spec-val">24 Months</span></li>
+            <li><div class="sdot sdot-purple"></div>Warranty: <span class="spec-val">6 Months</span></li>
           </ul>
           <a href="#contact" class="prod-link pl-purple">Enquire Now →</a>
         </div>
       </div>
 
-      <!-- SILVER -->
+      <!-- 7 x 12 -->
       <div class="prod-card">
         <div class="prod-stripe stripe-silver"></div>
         <div class="prod-img c-silver">
@@ -680,13 +676,13 @@ footer p { font-size:13px; color:var(--muted); }
         <div class="prod-body">
           <span class="prod-badge pb-silver">ElitePro</span>
           <div class="prod-name">Silver Series</div>
-          <div class="prod-model">Model: AE-SL-12</div>
+          <div class="prod-model">Model: 12V8Ah</div>
           <ul class="prod-specs">
             <li><div class="sdot sdot-silver"></div>Voltage: <span class="spec-val">12V</span></li>
-            <li><div class="sdot sdot-silver"></div>Capacity: <span class="spec-val">10Ah – 20Ah</span></li>
-            <li><div class="sdot sdot-silver"></div>Technology: <span class="spec-val">Silver Alloy Plates</span></li>
+            <li><div class="sdot sdot-silver"></div>Capacity: <span class="spec-val">8Ah</span></li>
+            <li><div class="sdot sdot-silver"></div>Dimensions (mm): <span class="spec-val">Silver Alloy Plates</span></li>
             <li><div class="sdot sdot-silver"></div>Best For: <span class="spec-val">Heavy Duty / Commercial</span></li>
-            <li><div class="sdot sdot-silver"></div>Warranty: <span class="spec-val">30 Months</span></li>
+            <li><div class="sdot sdot-silver"></div>Warranty: <span class="spec-val">6 Months</span></li>
           </ul>
           <a href="#contact" class="prod-link pl-silver">Enquire Now →</a>
         </div>
@@ -750,8 +746,8 @@ footer p { font-size:13px; color:var(--muted); }
         <h3>Atishay Enterprises</h3>
         <p>RiderZon Batteries is the premium battery brand of Atishay Enterprises. We serve OEMs, distributors, and retail dealers across India.</p>
         <!-- CONTACT INFO: edit address, phone, email below -->
-        <div class="cdet"><div class="cdi">📍</div><div class="cdt"><strong>Address</strong>Your manufacturing address,<br/>City, State, PIN</div></div>
-        <div class="cdet"><div class="cdi">📞</div><div class="cdt"><strong>Phone</strong>+91 XXXXX XXXXX</div></div>
+        <div class="cdet"><div class="cdi">📍</div><div class="cdt"><strong>Address</strong>21/1 Sikh Mohalla,<br/>Indore, M.P, 452007</div></div>
+        <div class="cdet"><div class="cdi">📞</div><div class="cdt"><strong>Phone</strong>+91 9826028682</div></div>
         <div class="cdet"><div class="cdi">✉️</div><div class="cdt"><strong>Email</strong>info@atishayenterprises.com</div></div>
         <div class="cdet"><div class="cdi">🕘</div><div class="cdt"><strong>Working Hours</strong>Mon – Sat, 9:00 AM – 6:00 PM</div></div>
       </div>
@@ -766,12 +762,12 @@ footer p { font-size:13px; color:var(--muted); }
             <label>Product Interested In</label>
             <select>
               <option value="">Select a RiderZon variant</option>
-              <option>Green Series – EcoCharge (AE-GR-12)</option>
-              <option>Blue Series – PowerMax (AE-BL-12)</option>
-              <option>Red Series – TurboStart (AE-RD-12)</option>
-              <option>Grey Series – DuraRide (AE-GY-12)</option>
-              <option>Purple Series – UltraCharge (AE-PR-12)</option>
-              <option>Silver Series – ElitePro (AE-SL-12)</option>
+              <option>12V-3LC</option>
+              <option>12V-4LB</option>
+              <option>ITZ 5LB</option>
+              <option>12V-5LB</option>
+              <option>12 x 12 (12V16Ah)</option>
+              <option>7 x 12 (12V8Ah)</option>
               <option>All Variants / Bulk Enquiry</option>
             </select>
           </div>
